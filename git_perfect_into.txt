@@ -1,0 +1,206 @@
+>> git --version
+>> git config --global user.name "gvkrepo" 
+>> git config --global user.email "vijaykiran.iiit@gmail.com"
+>> git config --list
+
+Need Help :
+git help <verb>
+git <verb> --help
+git help config
+git config --help
+
+
+Two scenarios
+
+1) Code that is present in the existing local repo
+2) Code that is present in the remote repo
+
+1))>> commands
+>> cd Local-repo
+>>ls -ls
+>>git init
+initialize Local-Repo/.git/
+	.git have info of the local-repo 
+	
+to remove Tracing the project use below command
+>>rm -rf .git
+	so we no longer tracking the local-repo project
+
+>> git status
+
+suppose we have a few files specific to our project we don't want those files
+to be in our remote repo , because other guys also get the same configurations
+>>touch .gitignore
+	open the .gitignore file add file name which you want to ignore
+	.DS_Store
+	.project
+	*.pyc
+>>git status
+
+--------------------------------------------------------
+Working Directory			Staging Area				.git directory (repository)
+<----------------------- Checkout the project -----------------------------------
+-----Staging files ------------->|------------------Commit ------------------->
+
+TO add all files 
+>>git add -A 
+>>git .gitignore
+
+if you want to remove the files from the staging area use reset
+>>git reset calc.py
+>>git status
+if you want remove everything from the staging area use git reset
+>>git reset
+
+once you commit the files, you can see the working directory clean
+>> git commit -m "Initial Commit"
+To check the history of logs use git log
+>>git log
+
+------------------------------------------------------------------------------------
+CLONING A REMOTE REPO
+>>git clone <url> <where to clone>
+>>git clone ../remote_repo.git .
+>>git clone https://github.com---------/remote_repo.git .
+
+-------------------------------------------------------------------------------------
+VIEWING INFORMATION ABOUT THE REMOTE REPOSITORY
+>>git remote -v
+>>git branch -a
+
+To show the changes that we made in code use below command(i,e line by line differences)
+>>git diff
+To show what are files been modified use below command 
+>>git status
+>>git add -A
+>>git commit -m "modified calc.py file"
+before you push the code into remote repository use below code check the code that
+you have in local is updated one
+>>git pull origin master
+>>git push origin master
+
+********************** you can also branch feature *********************
+To create a branch
+>>git branch calc-divide
+>>git branch
+out:
+	 calc-divide
+	* master
+	it is showing that currently we are working on master branch
+	if want to change your working directory as calc-divide use below command
+>>git checkout calc-divide
+>>git branch
+out:
+	* calc-divide
+	  master
+AFTER COMMIT PUSH BRANCH TO REMOTE
+>>git push -u origin calc-divide
+>>git branch -a
+
+
+************** MERGE A BRANCH ******************
+>>git checkout master
+>>git pull origin master
+>>git branch --merged   //tells branch that merged sofar or not
+>>git merge calc-divide
+>>git push origin master
+
+************** DELETING A BRANCH ****************
+>>git branch --merged
+>>git branch -d calc-divide
+>>git branch -a
+>>git push origin --delete calc-divide
+
+
+*************** More advanced concepets **************
+merge confilts
+rebaseing
+cherrypick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
