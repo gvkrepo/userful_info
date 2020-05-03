@@ -1,4 +1,3 @@
-Yes this is really helpful
 ##############Prodigious Git ###################
 
 How to install Git ?
